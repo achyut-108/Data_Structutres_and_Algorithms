@@ -1,5 +1,7 @@
 package nonlinear.graph.api;
 
+import java.util.List;
+
 public interface Graph {
 	/***
 	 * 
@@ -19,6 +21,6 @@ public interface Graph {
 	 */
 	public int noOfEdges();
 	
-	public Iterable<Integer> adjacentVertices(int v);
+	public List<Object> adjacentVertices(int v);
 	
 }

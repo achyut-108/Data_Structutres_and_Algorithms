@@ -30,6 +30,7 @@ public class Paths {
 //	}
 
 	public boolean hasPathTo(int vertex) {
+		if(vertex >= this.depthFirstSearch.getDepthFirstSearchHelperArr().length) return false;
 		return this.depthFirstSearch.getDepthFirstSearchHelperArr()[vertex] != null;
 	}
 
@@ -44,11 +45,12 @@ public class Paths {
 			System.out.println("[getPathFromSource] : has path...");
 			System.out.println( "...edgeTo.......... " + this.depthFirstSearch.getDepthFirstSearchHelperArr()[v].getEdgeTo());
 			System.out.println( "...edgeTo.......... " + this.depthFirstSearch.getDepthFirstSearchHelperArr()[this.depthFirstSearch.getDepthFirstSearchHelperArr()[v].getEdgeTo()].getEdgeTo());
-			for (int x = v; x == this.depthFirstSearch
+			for (int x = v; x != this.depthFirstSearch
 					.getSource(); x = this.depthFirstSearch.getDepthFirstSearchHelperArr()[x].getEdgeTo()) {
-				System.out.println("[getPathFromSource] : path : " + v);
+				System.out.println("[getPathFromSource] : path : " + x);
 				stackOfVertices.push(x);
 			}
+			stackOfVertices.push(this.depthFirstSearch.getSource());
 		}
 		return stackOfVertices;
 	}
@@ -75,11 +77,8 @@ public class Paths {
 		
 		Paths paths = new Paths(G, 0);
 		System.out.println("has path to 6 : " + paths.hasPathTo(6));
-		
-		for(int i=6;i < 0;i--) {
-			System.out.println("iiiiiiiiiiiii.... " + i);
-		}
-		paths.getPathFromSource(6).forEach(e->{
+
+		paths.getPathFromSource(22).forEach(e->{
 			System.out.println("eeeeeeeeeee--" + e);
 		});;
 		

@@ -15,7 +15,7 @@ public class BreadthFirstSearch {
 		queue.add(source);
 		while (!queue.isEmpty()) {
 			int node = queue.poll();
-			if (!breadthFirstSearchHelperArr[node].isMarked()) {
+			if (!breadthFirstSearchHelperArr[node].isMarked()) { 
 				breadthFirstSearchHelperArr[node].setMarked(true);
 				breadthFirstSearchHelperArr[node].setEdgeTo(temp_source);
 			}

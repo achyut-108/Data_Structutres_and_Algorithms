@@ -1,0 +1,48 @@
+[18/05, 8:14 AM] Anand Bharti Pr: Construct binary tree
+Height of a tree
+Traversal: BFS -LEVEL order
+DFS : PRE/POST/IN order 
+Traversal: Without Recursion - Level order using queue
+Diameter of the tree : Includes Height of a tree
+Insertion/Deletion/Searching : Binary Tree
+Replace each node with sum of in-order predecessor & successor
+Determine if binary tree is height balanced or not
+Symmetric tree ---25/12/2019
+Foldable binary tree
+Check if two binary tree are identical or not
+Spiral order (Zig Zag )Traversal of Binary tree---- 26-dec-2019
+Print left/right/bottom view of Binary tree
+Find next node in same level for given node in a binary tree-----27-Dec-2019
+Print cousions of given node
+Determine given tree is a subtree of another binary tree or not
+Find lowest common ancestor of two nodes in a binary tree
+Print all paths from root to leaf nodes in a binary tree
+Find the distance between given pair of nodes in a binary tree
+Print Vertical order
+Find vertical sum in BT--28-Dec-2019
+Find diagonal sum in BT
+Print Diagonal tree traversal in BT
+Convert BT to full tree by removing half nodes
+Find max. width of given tree:
+Find all nodes at a given distance from leaf nodes in a BT
+Count all subtree having same value of nodes in BT
+ZigZag tree traversal
+Reverse a path in BST using queue--29-Dec-2019
+
+Arrays..
+
+Dynamic Programming
+
+BackTracking
+
+Some Inportant Algortihms..like Dijakstra..also check from internet...
+
+Questions asked in interviews....Google,Facebook,Amazon....Linkedin,Twitter
+
+Concurrently System Design questions,OS Concepts,Tools,Angular,Docker,Kuernetes,Cassendra,
+Kafka,Reddis Cache,Eureka,Feign Client,AWS
+
+
+
+
+

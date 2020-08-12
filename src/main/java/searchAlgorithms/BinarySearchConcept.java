@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class BinarySearchConcept<V extends Comparable> {
+public class BinarySearchConcept<V extends Comparable<V>> {
 
 	private List<V> list = null;
 	private V itemToCompare = null;
@@ -50,7 +50,7 @@ public class BinarySearchConcept<V extends Comparable> {
 		}).boxed().collect(Collectors.toList());
 
 		list.add(null);
-		
+
 		System.out.println("Test : " + Integer.valueOf(3).compareTo(2));
 
 		BinarySearchConcept<Integer> bsc = new BinarySearchConcept<Integer>(list, 1);

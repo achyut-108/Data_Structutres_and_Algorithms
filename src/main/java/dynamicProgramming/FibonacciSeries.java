@@ -29,7 +29,7 @@ public class FibonacciSeries {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new DSAlgoException(
-					ex != null || !ex.getMessage().isBlank() ? ex.getMessage() : "Invalid Argument passed!!");
+					ex != null || !ex.getMessage().isEmpty() ? ex.getMessage() : "Invalid Argument passed!!");
 		}
 	}
 

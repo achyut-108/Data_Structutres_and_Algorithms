@@ -2,7 +2,7 @@ package arrays;
 
 import java.util.Scanner;
 
-public class RotateLeftByOnePlace {
+public class LeftRotateByOnePlace {
 
 	public int[] rotateLeftByOne(int[] arr, int numOfRotations) {
 
@@ -36,7 +36,7 @@ public class RotateLeftByOnePlace {
 				arr[i] = sc.nextInt();
 			}
 
-			RotateLeftByOnePlace rotateLeftByOnePlace = new RotateLeftByOnePlace();
+			LeftRotateByOnePlace rotateLeftByOnePlace = new LeftRotateByOnePlace();
 			int[] rotatedArray = rotateLeftByOnePlace.rotateLeftByOne(arr,1);
 			System.out.println("The array after rotating : ");
 			for (int i : rotatedArray) {

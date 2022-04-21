@@ -15,10 +15,10 @@ public class SlidingWindowNBonacciNumber {
 		for (int i = 0; i < arr.length; i++) {
 			if (i < N - 1) {
 				arr[i] = 0;
-			} else if (i == N-1 || i == N) {
+			} else if (i == N - 1 || i == N) {
 				arr[i] = 1;
 			} else {
-				arr[i] = 2 * arr[i - 1] - arr[i - N - 1];
+				arr[i] = 2 * arr[i - 1] - arr[i - 1 - N];
 			}
 		}
 

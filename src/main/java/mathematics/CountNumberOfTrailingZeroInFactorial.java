@@ -10,7 +10,7 @@ public class CountNumberOfTrailingZeroInFactorial {
 	 * factorial. The number of 2 will always be greater than the number of 5 as the
 	 * number of even numbers would be at least half.
 	 * 
-	 * If we can just count the number of 5 present then we can say there are as man
+	 * If we can just count the number of 5 present then we can say there are as many
 	 * zeroes in the factorial of the given number.
 	 * 
 	 * The 5 is found at every 5th position either itself or in combination with
@@ -29,8 +29,12 @@ public class CountNumberOfTrailingZeroInFactorial {
 	public int countNumOfTrailingZero(int number) {
 		int count = 0;
 
+		System.out.println("number : " + number);
 		for (int i = 5; i <= number; i = i * 5) {
+			System.out.println("i : " + i);
 			count = count + (number / i);
+			System.out.println("(number / i) : " + (number / i));
+			System.out.println("count : " + count);
 		}
 
 		return count;

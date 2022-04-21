@@ -1,15 +1,15 @@
-package sortingAlgorithms;
+package sorting.algorithms;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class SelectionSort<E extends Comparable<E>> {
+public class SelectionSort_generic<E extends Comparable<E>> {
 
 	private List<E> list;
 
-	public SelectionSort(List<E> list) {
+	public SelectionSort_generic(List<E> list) {
 		this.list = list;
 	}
 
@@ -59,7 +59,7 @@ public class SelectionSort<E extends Comparable<E>> {
 		list.add(-19);
 		 System.out.println("Before Sorting");
 		 list.forEach(System.out::println);
-		SelectionSort<Integer> selectionSort = new SelectionSort<>(list);
+		SelectionSort_generic<Integer> selectionSort = new SelectionSort_generic<>(list);
 
 		selectionSort.sort();
 

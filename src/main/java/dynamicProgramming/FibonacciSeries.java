@@ -36,6 +36,7 @@ public class FibonacciSeries {
 	public static void main(String[] args) {
 		
 		System.out.println("fibonacci of 900 : " + findFibonacci(153000));
+		System.out.println("fibonacci of 6:  " + findFibonacci(6));
 		
 	}
 	

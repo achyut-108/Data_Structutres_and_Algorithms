@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author siddhartha.kumar
  *
  */
-public class MajorityELement {
+public class MajorityELementMooresAlgorithm {
 
 	public int majorityElement(int[] arr) {
 		int count = 0;
@@ -73,7 +73,7 @@ public class MajorityELement {
 				arr[i] = sc.nextInt();
 			}
 
-			MajorityELement majorityELement = new MajorityELement();
+			MajorityELementMooresAlgorithm majorityELement = new MajorityELementMooresAlgorithm();
 			int majorityElement = majorityELement.majorityElement(arr);
 			System.out.println("The majority element is : " + majorityElement);
 

@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class BinarySearchConcept<V extends Comparable<V>> {
+public class BinarySearchConceptGenericSolution<V extends Comparable<V>> {
 
 	private List<V> list = null;
 	private V itemToCompare = null;
 
-	public BinarySearchConcept(List<V> list, V itemToCompare) {
+	public BinarySearchConceptGenericSolution(List<V> list, V itemToCompare) {
 		this.list = list;
 		this.itemToCompare = itemToCompare;
 	}
@@ -53,7 +53,7 @@ public class BinarySearchConcept<V extends Comparable<V>> {
 
 		System.out.println("Test : " + Integer.valueOf(3).compareTo(2));
 
-		BinarySearchConcept<Integer> bsc = new BinarySearchConcept<Integer>(list, 1);
+		BinarySearchConceptGenericSolution<Integer> bsc = new BinarySearchConceptGenericSolution<Integer>(list, 1);
 		System.out.println(bsc.binarySearch());
 	}
 

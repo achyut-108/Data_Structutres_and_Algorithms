@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author siddhartha.kumar
  *
  */
-public class FindSubArrayWithKElementsWithGivenSum {
+public class SlidingWindowFindSubArrayWithKElementsWithGivenSum {
 
 	public boolean checkSubArrayWithGivenSum(int[] arr, int sum, int lengthOfSubArray) {
 
@@ -46,7 +46,7 @@ public class FindSubArrayWithKElementsWithGivenSum {
 
 			System.out.println("Please enter the sum : ");
 			int sum = sc.nextInt();
-			FindSubArrayWithKElementsWithGivenSum findSubArrayWithKElementsWithGivenSum = new FindSubArrayWithKElementsWithGivenSum();
+			SlidingWindowFindSubArrayWithKElementsWithGivenSum findSubArrayWithKElementsWithGivenSum = new SlidingWindowFindSubArrayWithKElementsWithGivenSum();
 			boolean result = findSubArrayWithKElementsWithGivenSum.checkSubArrayWithGivenSum(arr, sum,
 					lengthOfSubArray);
 			System.out.println(

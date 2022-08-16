@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Assignment</title>
+</head>
+<body>
+	<div class="container text-center">
+		<!-- <h1>Welcome to CodeJava.net</h1>
+		<h3><a th:href="@{/users}">List of Users</a></h3>
+		<h3><a th:href="@{/register}">Register</a></h3>
+		<h3><a th:href="@{/login}">Login</a></h3> -->
+	</div>
+
+	<h2>3a. User Names :</h2>
+
+	<p id="userNames"></p>
+
+	<h2>3b. User Names from city London :</h2>
+
+	<p id="userNamesFromLondon"></p>
+
+	<h2>3c. User Names with same city :</h2>
+
+	<p id="userWithSameCity"></p>
+	<h1>Free Fake APIs</h1>
+	<h2>1 All users with userId = 1 :</h2>
+	<p id="userWithUSerId1"></p>
+
+	<h2>2.1 All Products with Price Greater than 100 :</h2>
+	<p id="productsWithPriceGreaterThan100"></p>
+
+	<h2>2.2 Products Sorted By Name in Ascending Order :</h2>
+	<p id="productsAfterSortingByNameAsc"></p>
+
+	<h2>4.1 Cats Sorted By Name in Descending Order :</h2>
+	<p id="catsAfterSortingByNameDesc"></p>
+
+	<h2>4.2 Cats With Country Codes US :</h2>
+	<p id="catsWithCountryCodeUs"></p>
+
+
+</body>
+
+<script>
+/* $.getJSON('https://jsonplaceholder.typicode.com/posts', function(data) {
+    // JSON result in `data` variable
+    console.log(data);
+}); */
+
+
+var jsonArr = '[{"name":"Harry Potter","city":"London"},{"name":"Don Quixote","city":"Madrid"},{"name":"Joan of Arc","city":"Paris"},{"name":"Rosa Park","city":"Alabama"},{"name":"John","city":"Paris"}]';
+
+//const txt = JSON.stringify(json, undefined, 4)
+//alert(txt);
+
+const obj = JSON.parse(jsonArr);
+//alert(obj[0].name);
+
+for (let i = 0; i < obj.length; i++) {
+	document.getElementById("userNames").innerHTML += obj[i].name + "<br>";
+}
+
+for (let i = 0; i < obj.length; i++) {
+	if (obj[i].city === 'London') {
+		document.getElementById("userNamesFromLondon").innerHTML += obj[i].name
+				+ "<br>";
+	}
+}
+
+function compareCity(a, b) {
+	if (a.city < b.city) {
+		return -1;
+	}
+	if (a.city > b.city) {
+		return 1;
+	}
+	return 0;
+}
+
+obj.sort(compareCity);
+
+//obj = JSON.parse(jsonArr);
+for (let i = 0; i < obj.length; i++) {
+	console.log(obj[i]);
+}
+//alert(obj);
+
+var cityTemp;
+var nameTemp;
+var count = 0;
+for (let i = 0; i < obj.length; i++) {
+	cityTemp = obj[i].city;
+	nameTemp = obj[i].name;
+	console.log('i is : ' + i + ' cityTemp : ' + cityTemp
+			+ " obj.length : " + obj.length);
+
+	while (i < obj.length - 1 && obj[++i].city == cityTemp) {
+		count++;
+		console.log('while loop : ' + obj[i]);
+		document.getElementById("userWithSameCity").innerHTML += "User with city : "
+				+ cityTemp + "<br>" + obj[i].name + "<br>";
+	}
+
+	if (count > 0) {
+		document.getElementById("userWithSameCity").innerHTML += nameTemp;
+		document.getElementById("userWithSameCity").innerHTML += "<br>"
+	}
+	if (i < obj.length - 1) {
+		i--;
+	}
+	count = 0;
+}
+
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+.then(result => result.json())
+.then((output) => {
+    console.log('Output: ', output.length);
+   // const obj = JSON.parse(output);
+   var count = 0;
+    for (let i = 0; i < output.length; i++) {
+    	if(output[i].userId == 1){
+    		count = count + 1;
+		document.getElementById("userWithUSerId1").innerHTML +=count + ". UserId : " + output[i].userId + " || UserName : " + output[i].title + "<br>";
+    	}
+	}
+    
+}).catch(err => console.error(err));
+
+var products;
+fetch('https://fakestoreapi.com/products')
+.then(result => result.json())
+.then((output) => {
+    console.log('Output: ', output.length);
+    products = output;
+    console.log('products while setting it : ' + products);
+   // const obj = JSON.parse(output);
+   var html='';
+   var count = 0;
+    for (let i = 0; i < output.length; i++) {
+    	if(output[i].price > 100){
+    		count++;
+		html += count + ". Product-Name : " + output[i].title + " || Price : " + output[i].price
+		 + "<br>";
+    	}
+	}
+    
+    if(html.length > 0){
+    	document.getElementById("productsWithPriceGreaterThan100").innerHTML += html;
+    }
+    
+}).catch(err => console.error(err));
+
+
+function compare(a, b) {
+	if (a.title < b.title) {
+		return -1;
+	}
+	if (a.title > b.title) {
+		return 1;
+	}
+	return 0;
+}
+
+
+
+fetch('https://fakestoreapi.com/products')
+.then(result => result.json())
+.then((output) => {
+    console.log('Output: ', output.length);
+   // const obj = JSON.parse(output);
+   var html='';
+   var count = 0;
+   output.sort(compare);
+   console.log(output);
+    for (let i = 0; i < output.length; i++) {
+    		count++;
+    		//html += count + ". " + output[i]. + "<br>";
+		html += count + ". Product-Name : " + output[i].title + " || Price : " + output[i].price
+		 + "<br>";
+    	}
+    if(html.length > 0){
+    	document.getElementById("productsAfterSortingByNameAsc").innerHTML += html;
+    }
+}).catch(err => console.error(err));
+
+function compareDesc(a, b) {
+	if (a.name < b.name) {
+		return 1;
+	}
+	if (a.name > b.name) {
+		return -1;
+	}
+	return 0;
+}
+
+fetch('https://api.thecatapi.com/v1/breeds')
+.then(result => result.json())
+.then((output) => {
+    console.log('Output: ', output.length);
+   // const obj = JSON.parse(output);
+   var html='';
+   var count = 0;
+   output.sort(compareDesc);
+   console.log(output);
+    for (let i = 0; i < output.length; i++) {
+    		count++;
+    		//html += count + ". " + output[i]. + "<br>";
+		html += count + ". Cats-Name : " + output[i].name + "<br>";
+    	}
+    if(html.length > 0){
+    	document.getElementById("catsAfterSortingByNameDesc").innerHTML += html;
+    }
+}).catch(err => console.error(err));
+
+fetch('https://api.thecatapi.com/v1/breeds')
+.then(result => result.json())
+.then((output) => {
+    console.log('Output: ', output.length);
+   var html='';
+   var count = 0;
+   output.sort(compareDesc);
+   console.log(output);
+    for (let i = 0; i < output.length; i++) {
+    	if(output[i].country_codes == 'US'){
+    		count++;
+		html += count + ". Cats-Name : " + output[i].name + "<br>";
+    	}
+    }
+    if(html.length > 0){
+    	document.getElementById("catsWithCountryCodeUs").innerHTML += html;
+    }
+}).catch(err => console.error(err));
+
+</script>
+
+</html>

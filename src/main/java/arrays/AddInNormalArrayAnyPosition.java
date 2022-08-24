@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @author siddhartha.kumar
  *
  */
-public class AddInNormalArrayAnyPosition {
+public class AddInNormalArrayAnyPosition { 
 
 	public int add(int arr[], int position, int currentSize, int capacity, int itemToInsert) {
 
